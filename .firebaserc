@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "surakh-store"
+  },
+  "targets": {
+    "surakh-store": {
+      "hosting": {
+        "runnermap": [
+          "runnermap"
+        ]
+      }
+    }
+  }
+}

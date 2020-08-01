@@ -1,0 +1,13 @@
+{
+  "hosting": [
+    { 
+      "target": "runnermap",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}
