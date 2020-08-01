@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "RunnerMap - RunAntsRun",
+  "name": "It uses Strava beacon data and display multiple beacon data on one map",
   "icons": [
     {
       "src": "favicon.ico",
