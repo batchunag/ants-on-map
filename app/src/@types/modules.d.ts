@@ -1,0 +1,1 @@
+declare module 'react-pure-render/function'
