@@ -31,7 +31,7 @@ const timeouts: { [name: string]: any } = {}
 export default class App extends Component<{ apiKey: string; zoom: number }, State> {
   static get defaultProps() {
     return {
-      apiKey: 'AIzaSyBqZzSsoq_PypxuEsvlq7UhMcdtzGSr8Zk',
+      apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
       zoom: 12,
     }
   }
