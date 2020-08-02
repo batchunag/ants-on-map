@@ -4,8 +4,10 @@ import './App.scss'
 import { Button, Modal } from 'react-bootstrap'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
+import ReactDOM from 'react-dom'
 import Marker from './components/marker'
 import stravaLocation from './lib/stravaLocation'
+import Runners, { Person } from './Runners'
 
 const history = createBrowserHistory()
 
@@ -101,7 +103,12 @@ export default class App extends Component<{ apiKey: string; zoom: number }, Sta
 
   startTracking = () => {
     const query = App.getQuery()
-    Object.entries(query).forEach(([name, id]) => this.startTrackingRunner(name, id))
+    const allRunner: Person[] = []
+    Object.entries(query).forEach(([name, id]) => {
+      this.startTrackingRunner(name, id)
+      allRunner.push({ name })
+    })
+    ReactDOM.render(<Runners runners={allRunner} />, document.getElementById('names'))
   }
 
   startTrackingRunner = (name: string, id: string) => {
@@ -187,6 +194,7 @@ export default class App extends Component<{ apiKey: string; zoom: number }, Sta
         <div className="p-2">
           <Button onClick={this.showModal}>Add runner link</Button>
         </div>
+        <div id="names"> </div>
       </div>
     )
   }
